@@ -35,8 +35,8 @@ const foo = {
 
 const d = delegateProxy(foo, bar)
 
-foor      // { n: 1, end: [Function: end] }
-bar       // { set: [Function: set], sub: [Function: sub] }
+bar       // { n: 1, end: [Function: end] }
+foo       // { set: [Function: set], sub: [Function: sub] }
 d         // {}
 
 d.n       // => 1
