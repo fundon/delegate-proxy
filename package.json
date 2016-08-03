@@ -4,7 +4,7 @@
   "description": "Super easy delegating method and accessor, using es6 Proxies with less than 10 lines of code",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "xo && nyc --reporter=lcov ava"
   },
   "repository": "fundon/delegate",
   "keywords": [
@@ -13,5 +13,26 @@
     "proxy"
   ],
   "author": "Fangdun Cai <cfddream@gmail.com> (fundon)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "0.15.2",
+    "nyc": "7.1.0",
+    "xo": "0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": ["node", "es6"],
+    "semicolon": false,
+    "space": true,
+    "rules": {
+      "babel/arrow-parens": [2, "as-needed"],
+      "babel/object-curly-spacing": 0,
+      "curly": 0,
+      "import/no-named-as-default": 0,
+      "max-lines": ["error", 500],
+      "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
+      "space-before-function-paren": [2, "always"],
+      "yoda": 0
+    }
+  }
 }

@@ -1,4 +1,4 @@
-exports.module = function delegateProxy(target, origin) {
+module.exports = function delegateProxy (target, origin) {
   return new Proxy(target, {
     get (target, key, receiver) {
       return Reflect.has(target, key) ? Reflect.get(target, key, receiver) : Reflect.get(origin, key, receiver)
