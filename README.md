@@ -35,6 +35,10 @@ const foo = {
 
 const d = delegateProxy(foo, bar)
 
+foor      // { n: 1, end: [Function: end] }
+bar       // { set: [Function: set], sub: [Function: sub] }
+d         // {}
+
 d.n       // => 1
 d.add(1)
 d.n       // => 2
@@ -44,6 +48,9 @@ d.n       // => 0
 
 d.set(1)
 d.n       // 1
+
+d.n = 233
+d.n       // 233
 ```
 
 ## Badges
