@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo && nyc --reporter=lcov ava"
   },
-  "repository": "fundon/delegate",
+  "repository": "fundon/delegate-proxy",
   "keywords": [
     "delegate",
     "delegation",
