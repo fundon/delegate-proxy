@@ -18,6 +18,10 @@ test(t => {
 
     sub (i) {
       this.n -= i
+    },
+
+    multiply (i = 1, j = 2) {
+      this.n *= i * j
     }
 
   }
@@ -37,4 +41,8 @@ test(t => {
 
   d.n = 233
   t.is(d.n, 233)
+
+  d.n = -1
+  d.multiply(1, 2)
+  t.is(d.n, -2)
 })
