@@ -1,6 +1,6 @@
 # delegate-proxy
 
-Super easy delegating method and accessor, using es6 Proxies with less than 10 lines of code.
+Super easy delegating method and accessor, using es6 Proxies with less than 15 lines of code.
 
 ## Installation
 

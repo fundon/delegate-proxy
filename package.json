@@ -1,7 +1,7 @@
 {
   "name": "delegate-proxy",
   "version": "0.0.0",
-  "description": "Super easy delegating method and accessor, using es6 Proxies with less than 10 lines of code",
+  "description": "Super easy delegating method and accessor, using es6 Proxies with less than 15 lines of code",
   "main": "index.js",
   "scripts": {
     "test": "xo && nyc --reporter=lcov ava"

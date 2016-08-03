@@ -7,7 +7,12 @@ test(t => {
 
     add (i) {
       this.n += i
+    },
+
+    returnThis () {
+      return this
     }
+
   }
 
   const foo = {
@@ -45,4 +50,8 @@ test(t => {
   d.n = -1
   d.multiply(1, 2)
   t.is(d.n, -2)
+
+  t.is(bar, d.returnThis())
+  t.not(foo, d.returnThis())
+  t.not(d, d.returnThis())
 })
