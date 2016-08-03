@@ -1,6 +1,6 @@
 {
   "name": "delegate-proxy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Super easy delegating method and accessor, using es6 Proxies with less than 15 lines of code",
   "main": "index.js",
   "scripts": {
@@ -21,17 +21,38 @@
   },
   "xo": {
     "esnext": true,
-    "envs": ["node", "es6"],
+    "envs": [
+      "node",
+      "es6"
+    ],
     "semicolon": false,
     "space": true,
     "rules": {
-      "babel/arrow-parens": [2, "as-needed"],
+      "babel/arrow-parens": [
+        2,
+        "as-needed"
+      ],
       "babel/object-curly-spacing": 0,
       "curly": 0,
       "import/no-named-as-default": 0,
-      "max-lines": ["error", 500],
-      "no-warning-comments": ["error", { "terms": ["todo", "fixme"], "location": "anywhere" }],
-      "space-before-function-paren": [2, "always"],
+      "max-lines": [
+        "error",
+        500
+      ],
+      "no-warning-comments": [
+        "error",
+        {
+          "terms": [
+            "todo",
+            "fixme"
+          ],
+          "location": "anywhere"
+        }
+      ],
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
       "yoda": 0
     }
   }
