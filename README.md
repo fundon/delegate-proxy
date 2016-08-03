@@ -49,7 +49,7 @@ d.n       // 1
 ## Badges
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Build Status](https://travis-ci.org/fundon/compose-iterator.svg?branch=master)](https://travis-ci.org/fundon/compose-iterator)
+[![Build Status](https://travis-ci.org/fundon/delegate-proxy.svg?branch=master)](https://travis-ci.org/fundon/delegate-proxy)
 
 ---
 
