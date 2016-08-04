@@ -4,6 +4,7 @@
   "description": "Super easy delegating method and accessor, using es6 Proxies with less than 15 lines of code",
   "main": "index.js",
   "scripts": {
+    "bench": "node benchmarks",
     "test": "xo && nyc --reporter=lcov ava"
   },
   "repository": "fundon/delegate-proxy",
@@ -16,6 +17,8 @@
   "license": "MIT",
   "devDependencies": {
     "ava": "0.15.2",
+    "benchmark": "2.1.1",
+    "delegates": "1.0.0",
     "nyc": "7.1.0",
     "xo": "0.16.0"
   },
