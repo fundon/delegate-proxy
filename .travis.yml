@@ -2,7 +2,9 @@ sudo: false
 language: node_js
 node_js:
   - "6"
-
+script:
+  - npm run bench
+  - npm test
 after_script:
   - npm install codecov
   - ./node_modules/.bin/codecov
