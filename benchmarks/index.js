@@ -72,3 +72,59 @@ suite3
     console.log('Fastest is ' + this.filter('fastest').map('name'))
   })
   .run()
+
+const suite4 = new Benchmark.Suite()
+
+suite4
+  .add('Reflect#get', () => {
+    Reflect.get(obj, 'a0')
+  })
+  .add('obj#key', () => {
+    /* eslint dot-notation: 0 */
+    obj['a0']
+  })
+  .add('obj.key', () => {
+    obj.a0
+  })
+  .on('cycle', event => {
+    console.log(String(event.target))
+  })
+  .on('complete', function () {
+    console.log('Fastest is ' + this.filter('fastest').map('name'))
+  })
+  .run()
+
+const suite5 = new Benchmark.Suite()
+
+suite5
+  .add('Reflect#has', () => {
+    Reflect.has(d0, 'a0')
+  })
+  .add('key in d0', () => {
+    'a0' in d0
+  })
+  .on('cycle', event => {
+    console.log(String(event.target))
+  })
+  .on('complete', function () {
+    console.log('Fastest is ' + this.filter('fastest').map('name'))
+  })
+  .run()
+
+const suite6 = new Benchmark.Suite()
+
+suite6
+  .add('Reflect#set', () => {
+    Reflect.set(obj, 'a0', 2)
+  })
+  .add('obj#key=', () => {
+    /* eslint dot-notation: 0 */
+    obj['a0'] = 2
+  })
+  .on('cycle', event => {
+    console.log(String(event.target))
+  })
+  .on('complete', function () {
+    console.log('Fastest is ' + this.filter('fastest').map('name'))
+  })
+  .run()

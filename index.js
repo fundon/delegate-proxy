@@ -1,14 +1,15 @@
 module.exports = function delegateProxy (target, origin) {
   return new Proxy(target, {
-    get (target, key, receiver) {
-      if (Reflect.has(target, key)) return Reflect.get(target, key, receiver)
-      const value = Reflect.get(origin, key)
-      // Must bound origin
-      if ('function' === typeof value) return value.bind(origin)
-      return value
+    get (target, key) {
+      if (Reflect.has(target, key)) return target[key]
+      const value = origin[key]
+      return 'function' === typeof value ? function method () {
+        return value.apply(origin, arguments)
+      } : value
     },
-    set (target, key, value, receiver) {
-      return Reflect.has(target, key) ? Reflect.set(target, key, value, receiver) : Reflect.set(origin, key, value)
+    set (target, key, value) {
+      (Reflect.has(target, key) ? target : origin)[key] = value
+      return true
     }
   })
 }
