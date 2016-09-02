@@ -3,3 +3,4 @@ npm-debug.log
 coverage
 .nyc_output
 examples/*/log/*.log
+.DS_Store
