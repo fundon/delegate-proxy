@@ -11,6 +11,9 @@ const d0 = {}
 d0.obj = obj
 const d = delegate(d0, 'obj')
 
+const d2 = {}
+d2.obj = obj
+
 for (let i = 0, l = 1000; i < l; i++) {
   obj[`a${i}`] = i
   obj[`b${i}`] = function () {}
@@ -18,6 +21,11 @@ for (let i = 0, l = 1000; i < l; i++) {
   d.getter(`a${i}`)
   d.method(`b${i}`)
   d.access(`c${i}`)
+  Object.assign(d2, {
+    [`a${i}`]: () => obj[`a${i}`],
+    [`b${i}`]: () => obj[`b${i}`],
+    [`c${i}`]: () => obj[`c${i}`]
+  })
 }
 
 const suite = new Benchmark.Suite()
@@ -30,6 +38,10 @@ suite
   .add('delegateProxy#getter', () => {
     /* eslint no-unused-expressions: 0 */
     d1.a0 === 0 ? 1 : 0
+  })
+  .add('common#getter', () => {
+    /* eslint no-unused-expressions: 0 */
+    d2.a0 === 0 ? 1 : 0
   })
   .on('cycle', event => {
     console.log(String(event.target))
